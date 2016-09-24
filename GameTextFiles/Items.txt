@@ -1,0 +1,179 @@
+@----------------------------------------------------------------------------------------------------
+@   COMMON
+@----------------------------------------------------------------------------------------------------
+[GOLD_COIN]
+name=Gold Coin
+category=common
+weight=0
+value=1
+
+@----------------------------------------------------------------------------------------------------
+@   CRAFTING
+@----------------------------------------------------------------------------------------------------
+[LEATHER]
+name=Leather
+category=crafting
+weight=2
+value=25
+
+[WOOD]
+name=Wood
+category=crafting
+weight=3
+value=10
+
+[FEATHER]
+name=Feather
+category=crafting
+weight=.02
+value=1
+
+[COAL]
+name=Coal
+category=crafting
+weight=1
+value=12
+
+[STONE]
+name=Stone
+category=crafting
+weight=4
+value=8
+
+[IRON_ORE]
+name=Iron Ore
+category=crafting
+weight=6
+value=34
+
+[IRON_INGOT]
+name=Iron Ingot
+category=crafting
+weight=3.5
+value=68
+
+[STEEL_INGOT]
+name=Steel Ingot
+category=crafting
+weight=4.5
+value=125
+
+@----------------------------------------------------------------------------------------------------
+@   CONSUMABLE
+@----------------------------------------------------------------------------------------------------
+[SMALL_HEALTH_POTION]
+name=Small Health Potion
+category=consumable
+weight=0.5
+value=12
+stat_to_nourish=hp
+nourish_amount=25
+
+[SMALL_MANA_POTION]
+name=Small Mana Potion
+category=consumable
+weight=0.5
+value=20
+stat_to_nourish=mana
+nourish_amount=75
+
+@----------------------------------------------------------------------------------------------------
+@   EQUIPMENT - WEAPONS
+@----------------------------------------------------------------------------------------------------
+[TEST_WEAPON]
+name=Test Weapon Solous
+category=equipment
+weight=0
+value=100000000
+equipment_type=primary
+damage=8675309
+defence=12293
+material=Dark Matter
+durability=137982465
+is_two_handed=true
+
+[FERAL_CLAWS]
+name=Feral Claws
+category=equipment
+weight=0
+value=0
+equipment_type=primary
+damage=35
+defence=0
+material=flesh
+durability=1000
+is_two_handed=true
+
+[WOODEN_SHORT_SWORD]
+name=Wooden Short Sword
+category=equipment
+weight=8
+value=20
+equipment_type=primary
+damage=25
+defence=0
+material=wood
+durability=55
+is_two_handed=
+
+[WOODEN_STAFF]
+name=Wooden Staff
+category=equipment
+weight=5
+value=12
+equipment_type=primary
+damage=12
+defence=0
+material=wood
+durability=55
+is_two_handed=true
+
+[WOODEN_BOW]
+name=Wooden Bow
+category=equipment
+weight=5
+value=15
+equipment_type=primary
+damage=10
+defence=0
+material=wood
+durability=55
+is_two_handed=true
+
+[GEL]
+name=Gel
+category=equipment
+weight=0
+value=0
+equipment_type=primary
+damage=2
+defence=0
+material=slime
+durability=20000
+is_two_handed=true
+@----------------------------------------------------------------------------------------------------
+@   EQUIPMENT - ARMOR
+@----------------------------------------------------------------------------------------------------
+[LEATHER_BODY]
+name=Leather Body
+category=equipment
+weight=8.0
+value=30
+equipment_type=body
+damage=0
+defence=8
+material=leather
+durability=85
+is_two_handed=
+
+[LEATHER_LEGS]
+name=Leather Legs
+category=equipment
+weight=7
+value=18
+equipment_type=legs
+damage=0
+defence=5
+material=leather
+durability=75
+is_two_handed=

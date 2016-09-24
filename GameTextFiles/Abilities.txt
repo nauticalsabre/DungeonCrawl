@@ -1,0 +1,34 @@
+[DECISIVE_STRIKE]
+name=Decisive Strike
+description=Description
+base_damage=35
+type=physical
+effect=bleed
+chance=10
+range=close
+cost=55
+[END]
+
+[VOLLEY]
+name=Volley
+description=Description
+base_damage=30
+type=physical
+effect=pinned
+chance=5
+range=long
+cost=55
+[END]
+
+[ICE_SHARD]
+name=Ice Shard
+description=Description
+base_damage=50
+type=magical
+effect=chill
+chance=10
+range=long
+cost=75
+[END]
+
+

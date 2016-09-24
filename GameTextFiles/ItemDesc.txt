@@ -1,0 +1,22 @@
+[WOOD_EXAMINE]
+||    Description:                                             ||
+||        Wood is a common find while exploring the world.     ||
+||    Wood can be used in many ways. Such as used for crafting ||
+||    new weapons, armour, traps, and other items.             ||
+\|_____________________________________________________________|/
+
+[SMALL_HEALTH_POTION_EXAMINE]
+||    Description:                                             ||
+||        Small health potions are the most basic way an       ||
+||    adventurer is able to restore his health. Since they are ||
+||    able to be made in mass for cheap they are plentiful,    ||
+||    even for the most poor of adventurer.                    ||
+\|_____________________________________________________________|/
+
+[SMALL_MANA_POTION_EXAMINE]
+||    Description:                                             ||
+||        Small mana potions are the most basic way an         ||
+||    adventurer is able to restore his mana. Since they are   ||
+||    able to be made in mass for cheap they are plentiful,    ||
+||    even for the most poor of adventurer.                    ||
+\|_____________________________________________________________|/

@@ -1,0 +1,385 @@
+[GAME_INFO]
+  ____                                        ____                    _ 
+ |  _ \ _   _ _ __   __ _  ___  ___  _ __    / ___|_ __ __ ___      _| |
+ | | | | | | | '_ \ / _` |/ _ \/ _ \| '_ \  | |   | '__/ _` \ \ /\ / | |
+ | |_| | |_| | | | | (_| |  __| (_) | | | | | |___| | | (_| |\ V  V /| |
+ |____/ \__,_|_| |_|\__, |\___|\___/|_| |_|  \____|_|  \__,_| \_/\_/ |_|
+  Author:Tyler      |___/  Date:August 5th,2016   Last: 6:30 AM 9/7/2016
+
+@Game formulas:
+@   max hp = ((vitality_max * .36) * 8) + 50)
+@	max carry weight = (strength_current * 10) + 40
+@	class ability amount = main attribute * 5
+@	experience needed per a level = 100 + ((level * 75) * (level / 4)) rounded to the nearest 10th
+@		levels:
+@			1 - 120
+@			2 - 180
+@			3 - 270
+@			4 - 400
+@			5 - 570
+@	leveling attribute:
+@		gain 5 skill point per a level up, gain 2 point in all levels with level up
+@			gains bonus amount = 3 points per a skill point put into the classes main attributes
+@			gains normal amount = 2 points per a skill point put into the classes average attributes
+@			gains diminished amount = 1 point per a skill point put into the classes main attribute
+[INTRO_MENU]
+    __________
+ _/ MAIN MENU |_________________________________________________
+|  _.-------------------------------------------------------._  |
+| /   > New Game                                              \ |
+||    > Load Game                                              ||
+||    > Options                                                ||
+||    ______                                                   ||
+ \\_/  Exit |_________________________________________________//
+[INTRO_NAME]
+    _________________
+ _/ NAME | SELECTION \__________________________________________
+|  _.-------------------------------------------------------._  |
+| /                                                           \ |
+||                   What is your name?                        ||
+ \\ _________________________________________________________ //
+   /_________________________________________________________\
+[CLASS_CHOICE_HEADER]
+    __________________
+ _/ CLASS | SELECTION |_________________________________________
+|  _.-------------------------------------------------------._  |
+| /                                                           \ |
+||            What class would you like to play as?            ||
+ \\ _________________________________________________________ //
+   /_________________________________________________________\
+[CLASS_CHOICES]
+class1=viking
+class2=knight
+class3=mage
+class4=ranger
+class5=rogue
+class6=test class
+
+[CUSTOM_CLASS_TEST_DESC]
+    _________________________________
+ _/ CUSTOM CLASS TEST | CLOSE COMBAT |__________________________
+|  _.-------------------------------------------------------._  |
+| /      Attributes:                                          \ |
+||     > [|||||||||  |||||||||] : Vitality                     ||
+||     > [||  ||            ||] : Strength                     ||
+||     > [||  ||||||||||||  ||] : Perception                   ||
+||     > [||  ||        ||  ||] : Endurance                    ||
+||     > [||  ||||||||||||  ||] : Intelligence                 ||
+||     > [||            ||  ||] : Speed                        ||
+||     > [|||||||||  |||||||||] : Dexterity                    ||
+||                                                             ||   
+||         Custom Class Test Description:                      ||
+||                                                             ||
+||     Pros:                                                   ||
+||         - it's a custom class so all the pros!              ||
+||     Cons:                                                   ||
+||         - custom classes have no weaknesses!                ||
+ \\___________________________________________________________//
+[TEST_CLASS_ATTRIBUTES]
+class=Test Class
+vitality=250
+strength=250
+perception=250
+endurance=250
+intelligence=250
+speed=250
+dexterity=250
+ability_resource_name=Code
+main_attribute=dexterity
+nerf_attribute=none
+
+[VIKING_DESC]
+    ______________________                             
+ _/ VIKING | CLOSE COMBAT |_____________________________________ 
+|  _.-------------------------------------------------------._  |
+| /      Attributes:                                          \ |
+||     > [|||||||||||||       ] : ^ Vitality ^                 ||
+||     > [||||||||||||||||    ] : ^ Strength ^                 ||
+||     > [||||||              ] : v Intelligence v             ||
+||     > [||||||||||          ] : Speed                        ||
+||     > [|||||               ] : Dexterity                    ||
+||                                                             ||
+||         Vikings are the true incarnation of the warrior     ||
+||     class. There pure brawn is there strongest point.       ||
+||     Since the average Viking is all about pure visual       ||
+||     and demonstrable strength. They more or less are        ||
+||     on the low end with out of body ideas and thoughts      ||
+||                                                             ||
+||     Pros:                                                   ||
+||         - Gains bonuses from axes                           ||
+||         - Higher strength growth                            ||
+||         - Gains bonuses for wearing leather armour          ||
+||     Cons:                                                   ||
+||         - Loses bonuses when wielding shields               ||
+||         - Diminished intelligence growth                    ||
+ \\___________________________________________________________//
+[VIKING_ATTRIBUTES]
+class=Viking
+vitality=65
+strength=80
+perception=35
+endurance=70
+intelligence=30
+speed=50
+dexterity=25
+ability_resource_name=Spirit
+main_attribute=strength
+nerf_attribute=intelligence
+
+[KNIGHT_DESC]
+    ______________________                            
+ _/ KNIGHT | CLOSE COMBAT |_____________________________________ 
+|  _.-------------------------------------------------------._  |
+| /      Attributes:                                          \ |
+||      > [|||||||||||         ] : Vitality                    ||
+||      > [||||||||||||        ] : Strength                    ||
+||      > [||||||||||          ] : Intelligence                ||
+||      > [||||||||||          ] : Speed                       ||
+||      > [|||||||||||         ] : Dexterity                   ||
+||                                                             ||
+||      Pros:                                                  ||
+||          - Gains bonuses from wielding swords               ||
+||          - Gains bonuses from wielding shields              ||
+||          - Gains bonuses for wearing steel armour           ||
+||          - Average growth rate for all stats                ||
+ \\___________________________________________________________//
+[KNIGHT_ATTRIBUTES]
+class=Knight
+vitality=55
+strength=60
+perception=50
+endurance=60
+intelligence=50
+speed=50
+dexterity=55
+ability_resource_name=Willpower
+main_attribute=vitality
+nerf_attribute=none
+
+[MAGE_DESC]
+    ______________                                    
+ _/ MAGE | CASTER |_____________________________________________ 
+|  _.-------------------------------------------------------._  |
+| /      Attributes:                                          \ |
+||      > [|||||||||           ] : v Vitality v                ||
+||      > [||||||||            ] : v Strength v                ||
+||      > [||||||||||||||||||  ] : ^ Intelligence ^            ||
+||      > [||||||||            ] : Speed                       ||
+||      > [||||||              ] : Dexterity                   ||
+||                                                             ||
+||      Pros:                                                  ||
+||          - Gains bonuses from wielding staffs/wands         ||
+||          - Higher intelligence growth                       ||
+||          - Gains bonuses for wearing cloth armour           ||
+||      Cons:                                                  ||
+||          - Loses bonuses for wearing steel armour           ||
+||          - Diminished vitality growth                       ||
+ \\___________________________________________________________//
+[MAGE_ATTRIBUTES]
+class=Mage
+vitality=45
+strength=40
+perception=65
+endurance=45
+intelligence=85
+speed=40
+dexterity=30
+ability_resource_name=Essence
+main_attribute=intelligence
+nerf_attribute=strength
+
+[RANGER_DESC]
+    ____________________                              
+ _/ RANGER | LONG RANGE |_______________________________________ 
+|  _.-------------------------------------------------------._  |
+| /      Attributes:                                          \ |
+||      > [|||||||||           ] : v Vitality v                ||
+||      > [||||||||||          ] : Strength                    ||
+||      > [||||||||            ] : Intelligence                ||
+||      > [||||||||||||||||    ] : ^ Speed ^                   ||
+||      > [||||||||||          ] : Dexterity                   ||
+||                                                             ||
+||      Pros:                                                  ||
+||          - Gains bonuses from throwing weapons              ||
+||          - Higher perception growth                         ||
+||          - Gains bonuses for wearing leather armour         ||
+||      Cons:                                                  ||
+||          - Diminished vitality growth                       ||
+||          - Loses bonuses for wearing steel armour           ||
+||          - Takes extra damage from close range sources      ||
+ \\___________________________________________________________//
+[RANGER_ATTRIBUTES]
+class=Ranger
+vitality=45
+strength=50
+perception=80
+endurance=50
+intelligence=40
+speed=65
+dexterity=50
+ability_resource_name=Focus
+main_attribute=perception
+nerf_attribute=vitality
+
+[ROGUE_DESC]
+    ___________________                               
+ _/ ROGUE | LONG RANGE |________________________________________ 
+|  _.-------------------------------------------------------._  |
+| /      Attributes:                                          \ |
+||      > [|||||||||           ] : Vitality                    ||
+||      > [||||||||||          ] : Strength                    ||
+||      > [||||||||            ] : v Intelligence v            ||
+||      > [||||||||||          ] : Speed                       ||
+||      > [||||||||||||||||    ] : ^ Dexterity ^               ||
+||                                                             ||
+||      Pros:                                                  ||
+||          - Gains bonuses from wielding small weapons        ||
+||          - Higher dexterity growth                          ||
+||          - Gains bonuses for wearing leather armour         ||
+||      Cons:                                                  ||
+||          - Diminished intelligence growth                   ||
+||          - Loses bonuses for wearing steel armour           ||
+||          - Loses bonuses the more weight                    ||
+ \\___________________________________________________________//
+[ROGUE_ATTRIBUTES]
+class=Rogue
+vitality=50
+strength=50
+perception=65
+endurance=65
+intelligence=40
+speed=50
+dexterity=80
+ability_resource_name=Focus
+main_attribute=dexterity
+nerf_attribute=intelligence
+
+[ACTION_PHASE]
+    _____________
+ _/ ACTION PHASE |______________________________________________
+|  _.-------------------------------------------------------._  |
+| /   > Stats                                                 \ |
+||    > Manage inventory                                       ||
+||                                                             ||
+||    > Roam                                                   ||
+||    > Go down-WIP                                            ||
+||    > Go up-WIP                                              ||
+||   _______________________                                   ||
+ \\_|  Save |  Quit to menu  \________________________________//
+ //                                                           \\
+
+[COMMON_HEADER]
+    _____________
+ _/ COMMON ITEMS |______________________________________________
+|  _.-------------------------------------------------------._  |
+| /                                                           \ |
+
+[CONSUMABLE_HEADER]
+    _________________
+ _/ CONSUMABLE ITEMS |__________________________________________
+|  _.-------------------------------------------------------._  |
+| /                                                           \ |
+
+[EQUIPMENT_HEADER]
+    ________________
+ _/ EQUIPMENT ITEMS |___________________________________________
+|  _.-------------------------------------------------------._  |
+| /                                                           \ |
+
+[CRAFTING_HEADER]
+    _______________
+ _/ CRAFTING ITEMS |____________________________________________
+|  _.-------------------------------------------------------._  |
+
+| /                                                           \ |
+
+[QUEST_HEADER]
+    ____________
+ _/ QUEST ITEMS |_______________________________________________
+|  _.-------------------------------------------------------._  |
+| /                                                           \ |
+
+[CHOOSE_EQUIP]
+    _____________
+ _/ CHOOSE EQUIP |______________________________________________
+|  _.-------------------------------------------------------._  |
+| /                                                           \ |
+||              What would you like to equip?                  ||
+\|_____________________________________________________________|/
+
+[MANAGE]
+    _______
+ _/ MANAGE |____________________________________________________
+|  _.-------------------------------------------------------._  |
+|/    > Use-WIP                                               \ |
+||    > Equip / Unequip                                        ||
+||    > Craft-WIP                                              ||
+||    > Examine                                                ||
+||   _________                                                 ||
+ \\__|  Return  \_____________________________________________//
+
+[INVENTORY_STATS]
+       | |            ____________________             | |
+ _____.| |._________/ INVENTORY STATISTICS \__________.| |._____
+|  _.-------------------------------------------------------._  |
+| /                                                           \ |
+
+[EXAMINE_CHOICE]
+    ________
+ _/ EXAMINE |___________________________________________________
+|  _.-------------------------------------------------------._  |
+| /                                                           \ |
+||             What would you like to examine?                 ||
+ \\___________________________________________________________//
+
+[EXAMINE_HEADER]
+    ________
+ _/ EXAMINE |___________________________________________________
+|  _.-------------------------------------------------------._  |
+| /                                                           \ |
+
+[BATTLE_ACTION]
+    _______
+ _/ ACTION |____________________________________________________
+|  _.-------------------------------------------------------._  |
+| /   > Attack                                                \ |
+||    > Use item-WIP                                           ||
+||    > Ability-WIP                                            ||
+||    > Flee                                                   ||
+||    _______                                                  ||
+ \\__|  Flee  \_______________________________________________//
+
+[QUIT_CONFIRMATION]
+    __________________
+ _/ QUIT CONFIRMATION |_________________________________________
+|  _.-------------------------------------------------------._  |
+| /                                                           \ |
+||                    Do you wish to quit?                     ||
+||         _____                              ____             ||
+ \\______/  YES  \__________________________/  NO  \__________//
+
+[QUIT_TO_MENU_CONFIRMATION]
+    _____________
+ _/ QUIT TO MENU |______________________________________________
+|  _.-------------------------------------------------------._  |
+| /                                                           \ |
+||             Do you wish to return to the menu?              ||
+||         (Will be asked if you want to save first)           ||
+||         _____                              ____             ||
+ \\______/  YES  \__________________________/  NO  \__________//
+
+[SAVE_CONFIRMATION]
+    __________________
+ _/ SAVE CONFIRMATION |_________________________________________
+|  _.-------------------------------------------------------._  |
+| /                                                           \ |
+||                     Do you wish to save?                    ||
+||         _____                             ______            ||
+ \\______/  YES  \__________________________/  NO  \__________//
+
+[GAME_OVER_HEADER]
+   ___________
+ _/ GAME OVER |_________________________________________________
+|  _.-------------------------------------------------------._  |
+| /                                                           \ |
+[
